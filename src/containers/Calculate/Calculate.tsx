@@ -129,22 +129,22 @@ export default function Calculate() {
                     <div className="calculate-wrapper">
                         <Header/>
                         <div className="bg-icon">
-                            <img className={`shopping-lady ${values.step == 1 ? 'd-block' : 'd-none'}`} src={energyHome}
+                            <img className={`shopping-lady ${values.step === 1 ? 'd-block' : 'd-none'}`} src={energyHome}
                                  alt="bg"/>
-                            <img className={`shopping-cart ${values.step == 1 ? 'd-block' : 'd-none'}`} src={energyBulb}
+                            <img className={`shopping-cart ${values.step === 1 ? 'd-block' : 'd-none'}`} src={energyBulb}
                                  alt="bg"/>
-                            <img className={`shopping-lady ${values.step == 2 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-lady ${values.step === 2 ? 'd-block' : 'd-none'}`}
                                  src={shoppingLady} alt="bg"/>
-                            <img className={`shopping-cart ${values.step == 2 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-cart ${values.step === 2 ? 'd-block' : 'd-none'}`}
                                  src={shoppingCart} alt="bg"/>
-                            <img className={`shopping-lady ${values.step == 3 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-lady ${values.step === 3 ? 'd-block' : 'd-none'}`}
                                  src={transportGeneral} alt="bg"/>
-                            <img className={`shopping-cart ${values.step == 3 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-cart ${values.step === 3 ? 'd-block' : 'd-none'}`}
                                  src={transportCar} alt="bg"/>
 
-                            <img className={`shopping-lady ${values.step == 4 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-lady ${values.step === 4 ? 'd-block' : 'd-none'}`}
                                  src={foodRecycle} alt="bg"/>
-                            <img className={`shopping-cart ${values.step == 4 ? 'd-block' : 'd-none'}`}
+                            <img className={`shopping-cart ${values.step === 4 ? 'd-block' : 'd-none'}`}
                                  src={foodDeliver} alt="bg"/>
 
                             <img className={`shopping-lady ${!values.step ? 'd-block' : 'd-none'}`}
@@ -178,18 +178,20 @@ export default function Calculate() {
                                             <img src={banners[banner]} alt="bg"/>
                                         </div>
                                         <div className="right">
-                                            {values.step == 1 && <StepOne/>}
-                                            {values.step == 2 && <StepTwo/>}
-                                            {values.step == 3 && <StepThree/>}
-                                            {values.step == 4 && <StepFour/>}
+                                            {values.step === 1 && <StepOne/>}
+                                            {values.step === 2 && <StepTwo/>}
+                                            {values.step === 3 && <StepThree/>}
+                                            {values.step === 4 && <StepFour/>}
                                             {showResult && <Result result={sum}/>}
                                             <div className="form-button">
 
+                                                {/* eslint-disable-next-line no-mixed-operators */}
                                                 {values.step > 1 && (
                                                     <button type="submit" className="custom-button fill"
                                                             onClick={() => {
                                                                 prevHandle()
                                                             }}>Geri</button>
+                                                    // eslint-disable-next-line no-mixed-operators
                                                 ) || <div/>}
 
                                                 {values.step === values.lastStep && (
